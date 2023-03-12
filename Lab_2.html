@@ -6,23 +6,25 @@
 	<a-scene>
 		<a-sky color="silver"></a-sky>
 
-		<a-plane width="7" height="7" rotation="-90 0 0" position="0 1 0" color="purple"></a-plane>
-
+		<a-plane width="7" height="7" rotation="-90 0 0" position="0 1 0" color="wite" src="Textures/grass texture.jpg">
+		</a-plane>
+		<!--Додаємо текстуру до площини під тором з папку в нашому каталозі, а саме текстуру трави-->
 		<a-camera rotation="-100 0 0" position="0 3 5"></a-camera>
 
-		<a-torus position="0 4 0" color="green" radius="1.2"></a-torus>
-
+		<a-torus position="0 4 0" color="green" radius="1.2" animation="property: components.material.material.color;
+		type: color; from: green; to: red; loop: true; dur: 10000"></a-torus>
+		<!--Додаємо анімацію зміни кольору для тору з зеленого на червоний із швидкістю анімації в 10000 мс.-->
 		<a-cylinder color="yellow" height="2" radius="0.05" position="1 2 0"></a-cylinder>
 
 		<a-cylinder color="blue" height="2" radius="0.05" position="-1 2 0"></a-cylinder>
 
-		<a-torus-knot color="orange" radius="1.2" position="-1.2 4 -0.2"></a-torus-knot>
-
+		<a-torus-knot color="orange" radius="1.2" position="-1.2 4 -0.2" animation="property: rotation;
+		to: 0 0 360; loop: true; dur: 10000"></a-torus-knot>
+		<--Додаємо до нашої фігури анімацію обертання на 360 градусів навколо вісі z, із швидкістю анімації в 10000 мс.-->
 		<a-plane width="9" height="2" position="3 4 -1.5"></a-plane>
 
-		<a-text value="Вітаємо у браузерній ВР!" color="black" width="10" position="2.1 4 -1.49" font="Font/tahoma-msdf.json" negate="false"></a-text>
+		<a-text value="Вітаємо у браузерній ВР!" color="black" width="10" position="2.1 4 -1.49" 
+		font="Font/tahoma-msdf.json" negate="false"></a-text>
 		<!--Додаємо новий шрифт для кирилиці-->
-		
 	</a-scene>
-</html> 
-<!--Всі координати та повороти визначені за допомогою 3D інспектора, який активується комбінацією клавіш ctrl+alt+i-->
+</html>
