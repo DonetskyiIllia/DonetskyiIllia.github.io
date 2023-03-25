@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Сонячна система</title>
+		<script src="aframe/aframe.min.js"></script>
+		<script src="Planet.js"></script>
+	</head>
+	<body>
+		<a-scene>
+			<a-entity geometry="primitive: sphere; radius: 696.340" material="src: Textures/Sun.jpg" planet="dist: 0; mass: 1.989e30; name: Sun"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 2.4397" material="src: Textures/Mercury.jpg" planet="dist: 57.910e9; mass: 3.285e23; T: 88; name: Mercury"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 6.0518" material="src: Textures/Venus.jpg" planet="dist: 108.2e9; mass: 4.876e24; T: 224.7; name: Venus"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 6.3781" material="src: Textures/Earth.jpg" planet="dist: 149.6e9; mass: 5.972e24; T: 365; name: Earth"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 3.3859" material="src: Textures/Mars.jpg" planet="dist: 227.9e9; mass: 6.39e23; T: 687; name: Mars"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 69.911" material="src: Textures/Jupiter.jpg" planet="dist: 778.5e9; mass: 1.898e27; T: 4380; name: Jupiter"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 58.232" material="src: Textures/Saturn.jpg" planet="dist: 1434e9; mass: 5.683e26; T: 10585; name: Saturn"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 25.362" material="src: Textures/Uranus.jpg" planet="dist: 2800e9; mass: 8.681e25; T: 30660; name: Uranus"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 24.622" material="src: Textures/Neptune.jpg" planet="dist: 4495e9; mass: 1.024e26; T: 60225; name: Neptune"></a-entity>
+			<a-entity geometry="primitive: sphere; radius: 1.1883" material="src: Textures/Pluto.jpg" planet="dist: 5900e9; mass: 1.303e22; T: 90520; name: Pluto"></a-entity>
+			<a-camera rotation="-100 0 0" position="13 3 27"></a-camera>
+		</a-scene>
+	</body>
+</html>
