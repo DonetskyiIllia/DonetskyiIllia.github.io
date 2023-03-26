@@ -1,4 +1,4 @@
-let markerVisible = { A: false, B: false, C: false};
+let markerVisible = { A: false, B: false, C: false, D: false, F: false};
 
 AFRAME.registerComponent('registerevents', {
 	init: function () {
