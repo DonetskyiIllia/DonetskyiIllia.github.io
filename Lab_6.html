@@ -8,25 +8,17 @@
 	</head>
     	<body>
         	<a-scene embedded arjs>
-			<a-marker type="pattern" url="Assets/pattern-letterA.patt" id="A">
+			<a-marker type="pattern" url="Assets/pattern-letterA.patt" registerevents id="A">
 				<a-sphere color="red" radius="0.2"></a-sphere>
 				<a-entity id="lineAB"></a-entity>
 			</a-marker>
-			<a-marker type="pattern" url="Assets/pattern-letterB.patt" id="B">
+			<a-marker type="pattern" url="Assets/pattern-letterB.patt" registerevents id="B">
 				<a-sphere color="red" radius="0.2"></a-sphere>
 				<a-entity id="lineBC"></a-entity>
 			</a-marker>
-			<a-marker type="pattern" url="Assets/pattern-letterC.patt" id="C">
+			<a-marker type="pattern" url="Assets/pattern-letterC.patt" registerevents id="C">
 				<a-sphere color="red" radius="0.2"></a-sphere>
 				<a-entity id="lineCA"></a-entity>
-			</a-marker>
-			<a-marker type="pattern" url="Assets/pattern-letterD.patt">
-				<a-sphere color="red" radius="0.2"></a-sphere>
-				<a-entity id="lineDF"></a-entity>
-			</a-marker>
-			<a-marker type="pattern" url="Assets/pattern-letterF.patt">
-				<a-sphere color="red" radius="0.2"></a-sphere>
-				<a-entity id="lineFA"></a-entity>
 			</a-marker>
 			<a-entity camera></a-entity>
 			<a-entity run></a-entity>
