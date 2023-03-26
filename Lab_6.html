@@ -1,39 +1,35 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>З'єднання маркерів лінією</title>
 		<script src="aframe/aframe.min.js"></script>
     		<script src="ARjs/aframe-ar.js"></script>
+    		<script src="Pentagon.js"></script>
 	</head>
     	<body>
         	<a-scene embedded arjs>
 			<a-marker type="pattern" url="Assets/pattern-letterA.patt">
-				<a-entity scale="0.2 0.2 0.2">
-					<a-sphere color="red" radius="1"></a-sphere>
-				</a-entity>
+				<a-sphere color="red" radius="0.2"></a-sphere>
+				<a-entity id="lineAB"></a-entity>
 			</a-marker>
 			<a-marker type="pattern" url="Assets/pattern-letterB.patt">
-				<a-entity scale="0.2 0.2 0.2">
-					<a-sphere color="red" radius="1"></a-sphere>
-				</a-entity>
+				<a-sphere color="red" radius="0.2"></a-sphere>
+				<a-entity id="lineBC"></a-entity>
 			</a-marker>
 			<a-marker type="pattern" url="Assets/pattern-letterC.patt">
-				<a-entity scale="0.2 0.2 0.2">
-					<a-sphere color="red" radius="1"></a-sphere>
-				</a-entity>
+				<a-sphere color="red" radius="0.2"></a-sphere>
+				<a-entity id="lineCA"></a-entity>
 			</a-marker>
 			<a-marker type="pattern" url="Assets/pattern-letterD.patt">
-				<a-entity scale="0.2 0.2 0.2">
-					<a-sphere color="red" radius="1"></a-sphere>
-				</a-entity>
+				<a-sphere color="red" radius="0.2"></a-sphere>
+				<a-entity id="lineDF"></a-entity>
 			</a-marker>
 			<a-marker type="pattern" url="Assets/pattern-letterF.patt">
-				<a-entity scale="0.2 0.2 0.2">
-					<a-sphere color="red" radius="1"></a-sphere>
-				</a-entity>
+				<a-sphere color="red" radius="0.2"></a-sphere>
+				<a-entity id="lineFA"></a-entity>
 			</a-marker>
-
 			<a-entity camera></a-entity>
+			<a-entity run></a-entity>
         	</a-scene>
 	</body>
 </html>
