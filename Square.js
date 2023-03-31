@@ -87,7 +87,7 @@ AFRAME.registerComponent('run', {
 			this.cylinderDA.visible = true;
 		}
 		if ( !markerVisible["A"] )
-			this.cylinderAB.visible = this.cylinderCA.visible = false;
+			this.cylinderAB.visible = this.cylinderCD.visible = false;
 		if ( !markerVisible["B"] )
 			this.cylinderAB.visible = this.cylinderBC.visible = false;
 		if ( !markerVisible["C"] )
