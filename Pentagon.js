@@ -86,7 +86,7 @@ AFRAME.registerComponent('run', {
 			this.cylinderCD.visible = true;
 		}
 		if ( markerVisible["D"] && markerVisible["F"] ) {
-			this.C.object3D.getWorldPosition(this.pD);
+			this.D.object3D.getWorldPosition(this.pD);
 			this.F.object3D.getWorldPosition(this.pF);
 			let distance = this.pD.distanceTo( this.pF );
 			this.lineDF.lookAt( this.pF );
@@ -106,7 +106,7 @@ AFRAME.registerComponent('run', {
 		if ( !markerVisible["B"] )
 			this.cylinderAB.visible = this.cylinderBC.visible = false;
 		if ( !markerVisible["C"] )
-			this.cylinderBC.visible = this.cylinderCD.visible = false;
+			this.cylinderCD.visible = this.cylinderBC.visible = false;
 		if ( !markerVisible["D"] )
 			this.cylinderCD.visible = this.cylinderDF.visible = false;
 		if ( !markerVisible["F"] )
