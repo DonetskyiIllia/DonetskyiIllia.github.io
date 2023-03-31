@@ -2,30 +2,37 @@ let markerVisible = { A: false, B: false, C: false, D: false, F: false};
 
 AFRAME.registerComponent('registerevents', {
 	init: function () {
-		let marker = this.el;
+		var marker = this.el;
 		marker.addEventListener('markerFound', function() {
 			markerVisible[ marker.id ] = true;
+			console.log(markerVisible);
 		});
 		marker.addEventListener('markerLost', function() {
 			markerVisible[ marker.id ] = false;
+			console.log(markerVisible);
 		});
 	}
 });
+
 
 AFRAME.registerComponent('run', {
 	init: function() {
 		this.A = document.querySelector("#A");
 		this.B = document.querySelector("#B");
 		this.C = document.querySelector("#C");
+		this.D = document.querySelector("#D");
+		this.F = document.querySelector("#F");
 
 		this.pA = new THREE.Vector3();
 		this.pB = new THREE.Vector3();
 		this.pC = new THREE.Vector3();
+		this.pD = new THREE.Vector3();
+		this.pF = new THREE.Vector3();
 
 		let material = new THREE.MeshLambertMaterial({color:0xFF0000});
-		let geometry=new THREE.CylinderGeometry(0.05, 0.05, 1, 12);
-		geometry.applyMatrix( new THREE.Matrix4().makeTranslation(0, 0.5, 0));
-		geometry.applyMatrix( new THREE.Matrix4().makeRotationX(THREE.MathUtils.degToRad( 90 ) ) );
+		let geometry=new THREE.CylinderGeometry( 0.05, 0.05, 1, 12);
+		geometry.applyMatrix4( new THREE.Matrix4().makeTranslation(0, 0.5, 0 ) );
+		geometry.applyMatrix4( new THREE.Matrix4().makeRotationX(THREE.MathUtils.degToRad( 90 ) ) );
 
 		this.cylinderAB = new THREE.Mesh( geometry, material );
 		this.lineAB = document.querySelector('#lineAB').object3D;
@@ -37,19 +44,27 @@ AFRAME.registerComponent('run', {
 		this.lineBC.add( this.cylinderBC );
 		this.cylinderBC.visible = false;
 
-		this.cylinderCA = new THREE.Mesh( geometry, material );
-		this.lineCA = document.querySelector('#lineCA').object3D;
-		this.lineCA.add( this.cylinderAC );
-		this.cylinderCA.visible = false;
+		this.cylinderCD = new THREE.Mesh( geometry, material );
+		this.lineCD = document.querySelector('#lineCD').object3D;
+		this.lineCD.add( this.cylinderCD );
+		this.cylinderCD.visible = false;
+
+		this.cylinderDF = new THREE.Mesh( geometry, material );
+		this.lineDF = document.querySelector('#lineDF').object3D;
+		this.lineDF.add( this.cylinderDF );
+		this.cylinderDF.visible = false;
+
+		this.cylinderFA = new THREE.Mesh( geometry, material );
+		this.lineFA = document.querySelector('#lineFA').object3D;
+		this.lineFA.add( this.cylinderFA );
+		this.cylinderFA.visible = false;
 	},
 	
 	tick: function (time, deltaTime) {
-		let P = 0;
 		if ( markerVisible["A"] && markerVisible["B"] ) {
 			this.A.object3D.getWorldPosition(this.pA);
 			this.B.object3D.getWorldPosition(this.pB);
 			let distance = this.pA.distanceTo( this.pB );
-			P += distance;
 			this.lineAB.lookAt( this.pB );
 			this.cylinderAB.scale.set(1,1,distance);
 			this.cylinderAB.visible = true;
@@ -58,26 +73,43 @@ AFRAME.registerComponent('run', {
 			this.B.object3D.getWorldPosition(this.pB);
 			this.C.object3D.getWorldPosition(this.pC);
 			let distance = this.pB.distanceTo( this.pC );
-			P += distance;
 			this.lineBC.lookAt( this.pC );
 			this.cylinderBC.scale.set(1,1,distance);
 			this.cylinderBC.visible = true;
 		}
-		if ( markerVisible["C"] && markerVisible["A"] ) {
-			this.A.object3D.getWorldPosition(this.pA);
+		if ( markerVisible["C"] && markerVisible["D"] ) {
 			this.C.object3D.getWorldPosition(this.pC);
-			let distance = this.pC.distanceTo( this.pA );
-			P += distance;
-			this.lineCA.lookAt( this.pA );
-			this.cylinderCA.scale.set(1,1,distance);
-			this.cylinderCA.visible = true;
+			this.D.object3D.getWorldPosition(this.pD);
+			let distance = this.pC.distanceTo( this.pD );
+			this.lineCD.lookAt( this.pD );
+			this.cylinderCD.scale.set(1,1,distance);
+			this.cylinderCD.visible = true;
 		}
-		console.log("P = ", P)
+		if ( markerVisible["D"] && markerVisible["F"] ) {
+			this.C.object3D.getWorldPosition(this.pD);
+			this.F.object3D.getWorldPosition(this.pF);
+			let distance = this.pD.distanceTo( this.pF );
+			this.lineDF.lookAt( this.pF );
+			this.cylinderDF.scale.set(1,1,distance);
+			this.cylinderDF.visible = true;
+		}
+		if ( markerVisible["F"] && markerVisible["A"] ) {
+			this.F.object3D.getWorldPosition(this.pF);
+			this.A.object3D.getWorldPosition(this.pA);
+			let distance = this.pF.distanceTo( this.pA );
+			this.lineFA.lookAt( this.pA );
+			this.cylinderFA.scale.set(1,1,distance);
+			this.cylinderFA.visible = true;
+		}
 		if ( !markerVisible["A"] )
-			this.cylinderAB.visible = this.cylinderAC.visible = false;
+			this.cylinderAB.visible = this.cylinderFA.visible = false;
 		if ( !markerVisible["B"] )
 			this.cylinderAB.visible = this.cylinderBC.visible = false;
 		if ( !markerVisible["C"] )
-			this.cylinderAC.visible = this.cylinderBC.visible = false;
+			this.cylinderBC.visible = this.cylinderCD.visible = false;
+		if ( !markerVisible["D"] )
+			this.cylinderCD.visible = this.cylinderDF.visible = false;
+		if ( !markerVisible["F"] )
+			this.cylinderDF.visible = this.cylinderFA.visible = false;
 	}
 });

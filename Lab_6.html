@@ -4,7 +4,7 @@
 		<title>З'єднання маркерів лінією</title>
 		<script src="aframe/aframe.min.js"></script>
     		<script src="ARjs/aframe-ar.js"></script>
-    		<script src="Triangle.js"></script>
+    		<script src="Pentagon.js"></script>
 	</head>
     	<body>
         	<a-scene embedded arjs>
@@ -19,6 +19,14 @@
 			<a-marker type="pattern" url="Assets/pattern-letterC.patt" registerevents id="C">
 				<a-sphere color="red" radius="0.10"></a-sphere>
 				<a-entity id="lineCA"></a-entity>
+			</a-marker>
+			<a-marker type="pattern" url="Assets/pattern-letterD.patt" registerevents id="D">
+				<a-sphere color="red" radius="0.10"></a-sphere>
+				<a-entity id="lineDF"></a-entity>
+			</a-marker>
+			<a-marker type="pattern" url="Assets/pattern-letterF.patt" registerevents id="F">
+				<a-sphere color="red" radius="0.10"></a-sphere>
+				<a-entity id="lineFA"></a-entity>
 			</a-marker>
 			<a-entity camera></a-entity>
 			<a-entity run></a-entity>
