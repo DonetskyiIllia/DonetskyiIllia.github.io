@@ -1,0 +1,196 @@
+/* Base  _______________________________________________________________________________________*/
+    *{margin: 0; padding: 0; position: center;}
+    .row {margin-bottom: 1.75438596491228%;}
+    .column1{width:6.57894736842105%;}
+    .column2{width:14.91228070175439%;}
+    .column3{width:23.24561403508772%;}
+    .column4{width:31.57894736842105%;}
+    .column5{width:39.91228070175439%;}
+    .column6{width:48.24561403508772%;}
+    .column7{width:56.57894736842105%;}
+    .column8{width:64.91228070175439%;}
+    .column9{width:73.24561403508772%;}
+    .column10{width:81.57894736842105%;}
+    .column11{width:89.91228070175439%;}
+    .column12{width:98.24561403508772%;}
+
+body{
+    background-image:url(img/body.jpg); 
+    width:60%; 
+    margin: 0 auto; 
+    margin-top: 2%;}
+.container {
+    margin:0 auto;
+    padding:0;
+    width:100%; 
+}
+.row:after {
+    display:block;
+    content:"";
+    height:0;
+    visibility:hidden;
+    clear:both;  
+}
+.none{
+    padding:0; 
+    text-decoration: none; 
+    color: #a2ccd0; 
+    font-family: Georgia;  
+    font-size: 24px; 
+    clear: none; 
+    margin: 0; 
+    float:none;
+}
+[class*="column"] {
+    display:inline;
+    float:left;
+    margin-left:0.87719298245614%;
+    margin-right:0.87719298245614%;
+}
+.margin_0{
+margin: 0 auto;
+}
+/* Logo  _______________________________________________________________________________________*/
+.header{
+    margin-top: -5%;
+    margin-bottom: -5%;
+}
+.logo{
+   width: 30%;
+   margin-left: 35%;
+}
+
+/* Nav  _______________________________________________________________________________________*/
+.nav{
+    background-image: url(img/navigation.jpg);
+    margin:0 auto; 
+    background-origin: content-box; 
+    background-repeat: no-repeat; 
+}
+ul {
+    margin-left: 25%; 
+    padding:0;
+}
+ul li { 
+    padding:0; 
+    list-style:none;
+}
+a { 
+    display:block; 
+    float:left; 
+    font-size:0.2em; 
+    text-transform:uppercase; 
+    margin: 0 3% 0 3%; 
+    text-decoration:none; 
+    color:#FFFFFF; 
+    text-decoration:none; 
+    font-weight:9999px; 
+}
+a {
+    color:#000; 
+    font-size:17px;
+    padding: 4% 0 5% 1%; 
+    color:#b3b496;
+}
+a:hover {
+    color:#68d3ed; 
+    text-shadow: 5px 5px 7px black, 10px 10px 1em #FFF;
+}
+
+/* Body  _______________________________________________________________________________________*/
+h3{
+    color: #8a8571; 
+    font-size: 12px; 
+    ont-family: Harlow Solid Italic;
+}
+p{
+    color: #e8d4ad;
+    font-size: 15px;
+    font-family: arial;
+    line-height: 15px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+h1{
+    color:  #badee1; 
+    font-size: 3em
+}
+h4{ 
+    color: #a2ccd0;
+    font-size: 30px;
+    font-family: Georgia;
+    margin: 5px 0 15px 0;
+    line-height: 20px;
+}
+
+/* Footer  _______________________________________________________________________________________*/
+.box_footer{
+    background-image: url(img/bottom.jpg); 
+    height: 200px; width: 60%;
+    position: absolute; 
+    padding-top:10px;
+}
+.footer h2{
+    text-decoration: none; 
+    color: #a2ccd0; 
+    font-family: Georgia;   
+    font-size: 16px; 
+    font-weight: normal;
+}
+.footer p{
+    margin-top: 20px; 
+    border-bottom: 1px dotted #8a8571;
+}
+
+.end{
+    position: absolute; 
+    z-index: 200; 
+    margin-top: 11%;
+    
+}
+.end p {
+    padding: 10px 0;
+    color: #b3b496;
+    font-family: Georgia;
+    letter-spacing: 1.5px;
+}
+hr{background: none;
+    border-top: 1px dotted #5b5a4e;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px dotted #8a8571;
+    margin: 15px 0;
+}
+
+
+
+
+/* ?  _______________________________________________________________________________________*/
+/*
+.box{
+    width:80%;
+    margin:0 auto;
+    background: red
+block1{
+    background: green;
+}
+.block2{
+    background: pink;
+}
+.block3{
+    background: lightgreen;
+}
+.block4{
+    background: lightblue;
+}
+two li {
+    margin-left: 30px;
+    list-style: square;
+    margin-bottom: 5px; 
+    color:#e8d4ad;
+}
+
+
+*/
+
+/* #a2ccd0  #badee1*/
