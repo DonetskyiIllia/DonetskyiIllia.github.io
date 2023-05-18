@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Індивідуальна лабораторна робота 1</title>
+		<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    		<script src="ARjs/aframe-ar.js"></script>
+	</head>
+	<body>
+		<a-scene>
+			<a-marker type="pattern" url="Assets/NBA.patt">
+			<!--<a-sky color="#777777"></a-sky>-->
+			<a-entity rotation="0 0 -10">
+				<a-plane src="Textures/grass texture.jpg" width=10 height=0.5 position="0 0 0" rotation="-80 0 0"></a-plane>
+				<a-sphere radius=0.1 position="-5 2 0" src="Textures/perlin-512.png"
+	animation="property: position; to: -5 0.1 0; dur: 1000; easing: linear; loop: false" 
+
+	animation__2="delay: 1000; property: position; from: -5 0.1 0; to: -4 1 0; dur: 1000; easing: linear; loop: false" 
+	animation__3="delay: 2000; property: position; from: -4 1 0; to: -3 0.1 0; dur: 1000; easing: linear; loop: false" 
+
+	animation__4="delay: 3000; property: position; from: -3 0.1 0; to: -2 1 0; dur: 1000; easing: linear; loop: false" 
+	animation__5="delay: 4000; property: position; from: -2 1 0; to: -1 0.1 0; dur: 1000; easing: linear; loop: false" 
+
+	animation__6="delay: 5000; property: position; from: -1 0.1 0; to: 0 1 0; dur: 1000; easing: linear; loop: false" 
+	animation__7="delay: 6000; property: position; from: 0 1 0; to: 1 0.1 0; dur: 1000; easing: linear; loop: false" 
+
+	animation__8="delay: 7000; property: position; from: 1 0.1 0; to: 2 1 0; dur: 1000; easing: linear; loop: false" 
+	animation__9="delay: 8000; property: position; from: 2 1 0; to: 3 0.1 0; dur: 1000; easing: linear; loop: false" 
+
+	animation__10="delay: 9000; property: position; from: 3 0.1 0; to: 4 1 0; dur: 1000; easing: linear; loop: false" 
+	animation__11="delay: 10000; property: position; from: 4 1 0; to: 5 0.1 0; dur: 1000; easing: linear; loop: false" 
+				></a-sphere>
+			</a-entity>
+			</a-marker>
+			<a-camera position="-5 2 2" animation="property: position; to: 5 0 2; dur: 10800; easing: linear; loop: false" rotation="0 0 0"-->></a-camera>
+		</a-scene>
+	</body>
+</html>
