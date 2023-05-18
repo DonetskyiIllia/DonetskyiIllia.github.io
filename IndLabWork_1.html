@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Індивідуальна лабораторна робота 1</title>
+		<title>Р†РЅРґРёРІС–РґСѓР°Р»СЊРЅР° Р»Р°Р±РѕСЂР°С‚РѕСЂРЅР° СЂРѕР±РѕС‚Р° 1</title>
 		<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     		<script src="ARjs/aframe-ar.js"></script>
 	</head>
 	<body>
 		<a-scene>
-			<a-marker type="pattern" url="Assets/NBA.patt">
+			<a-marker preset="hiro" <!--type="pattern" url="Assets/NBA.patt"-->>
 			<!--<a-sky color="#777777"></a-sky>-->
-			<a-entity rotation="0 0 -10">
+			<a-entity rotation="-70 0 -10" scale="2 2 2">
 				<a-plane src="Textures/grass texture.jpg" width=10 height=0.5 position="0 0 0" rotation="-80 0 0"></a-plane>
 				<a-sphere radius=0.1 position="-5 2 0" src="Textures/perlin-512.png"
 	animation="property: position; to: -5 0.1 0; dur: 1000; easing: linear; loop: false" 
@@ -31,7 +31,7 @@
 				></a-sphere>
 			</a-entity>
 			</a-marker>
-			<a-camera position="-5 2 2" animation="property: position; to: 5 0 2; dur: 10800; easing: linear; loop: false" rotation="0 0 0"-->></a-camera>
+			<a-camera rotation="-90 0 0" position="-5 2 2" animation="property: position; to: 5 0 2; dur: 10800; easing: linear; loop: false" rotation="0 0 0"-->></a-camera>
 		</a-scene>
 	</body>
 </html>
