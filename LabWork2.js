@@ -1,5 +1,6 @@
 var scene, camera, renderer;
 var arToolkitSource, arToolkitContext;
+let sphere, plane;
 
 document.addEventListener("DOMContentLoaded", initialize);
 
@@ -91,14 +92,17 @@ function initialize()
 	const texture = new THREE.TextureLoader().load("/Textures/perlin-512.png"); 
 	const materialTexture = new THREE.MeshBasicMaterial( { map:texture } );
 
+	const texture1 = new THREE.TextureLoader().load("/Textures/grass texture.jpg"); 
+	const materialTexture1 = new THREE.MeshBasicMaterial( { map:texture1 } );
+
 	const geometry = new THREE.SphereGeometry(2, 64, 32); 
-	const sphere = new THREE.Mesh( geometry, materialTexture );
+	sphere = new THREE.Mesh( geometry, materialTexture );
 	sphere.position.set(0, 0, 0);
 	//scene.add(sphere);
 	
 	const geometryPlane = new THREE.PlaneGeometry( 40, 5 );
 	const materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
-	const plane = new THREE.Mesh( geometryPlane, materialPlane );
+	plane = new THREE.Mesh( geometryPlane, materialTexture1 );
 	plane.rotation.x = -45*Math.PI/180;
 	plane.position.set(0, -1, 0);
 	
@@ -107,16 +111,24 @@ function initialize()
 	group.add(sphere);
 	scene.add( group );
 
-	group.rotation.set(0, 0, -Math.PI/6);
-	//group.scale.set(0.25, 0.25, 0.25);
+	group.rotation.set(-Math.PI/2, Math.PI/4, -Math.PI/6);
 
+	markerHiro.add(group);
+
+	camera.position.set(0, 0, 10);
+	
+	animate();
+
+}
 
 let x, y, t=0, r = 1;
 
 let timer=new THREE.Clock();
 
-function anima()
+function animate()
 {
+	requestAnimationFrame(animate);
+
 	t += timer.getDelta()*5;
 		
 	x=r*(t-Math.sin(t))-20;
@@ -126,23 +138,10 @@ function anima()
 		t=0;	
 
 	camera.position.x = -20+t;
-	camera.position.y = 10-t/2;
-}
-
-	anima();
-	markerHiro.add(group);
-	animate();
-
-}
-
-
-
-function animate()
-{
-	requestAnimationFrame(animate);
+	camera.position.y = 12-t/2;
+	//camera.position.y = 0+t/2;
 
 	if ( arToolkitSource.ready !== false )
 		arToolkitContext.update( arToolkitSource.domElement );
 	renderer.render( scene, camera );
 }
-
