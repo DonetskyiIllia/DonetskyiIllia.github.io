@@ -31,6 +31,12 @@ group.add(plane);
 group.add(sphere);
 scene.add( group );
 
+	const geometry = new THREE.BoxGeometry(0.06, 0.06, 0.06);
+	const material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+	const mesh = new THREE.Mesh(geometry, material);
+	mesh.position.set(0, 0, -0.3);
+	scene.add(mesh);
+
 group.rotation.set(0, 0, -Math.PI/6);
 
 group.scale.set(0.01, 0.01, 0.01);
