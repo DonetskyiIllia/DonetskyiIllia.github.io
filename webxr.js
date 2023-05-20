@@ -16,15 +16,15 @@ const materialTexture = new THREE.MeshBasicMaterial( { map:texture } );
 const texture1 = new THREE.TextureLoader().load("/Textures/grass texture.jpg"); 
 const materialTexture1 = new THREE.MeshBasicMaterial( { map:texture1 } );
 	
-const geometry = new THREE.SphereGeometry(2, 64, 32); 
+const geometry = new THREE.SphereGeometry(0.02, 64, 32); 
 const sphere = new THREE.Mesh( geometry, materialTexture );
 sphere.position.set(0, 0, 0);
 
-const geometryPlane = new THREE.PlaneGeometry( 40, 5 );
+const geometryPlane = new THREE.PlaneGeometry( 0.04, 0.05 );
 const materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
 const plane = new THREE.Mesh( geometryPlane, materialTexture1 );
 plane.rotation.x = -45*Math.PI/180;
-plane.position.set(0, -1, 0);
+plane.position.set(0, -0.01, 0);
 	
 let group = new THREE.Group();
 group.add(plane);
@@ -33,7 +33,7 @@ scene.add( group );
 
 group.rotation.set(0, 0, -Math.PI/6);
 
-camera.position.set(0, 0, 10);
+camera.position.set(0, 0, 0.1);
 
 let x, y, t = 0, r = 1;
 
