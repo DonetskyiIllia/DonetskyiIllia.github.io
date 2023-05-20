@@ -36,15 +36,11 @@
 		<a-scene vr-mode-ui="enabled: false;"
 			renderer="logarithmicDepthBuffer: true;"
 			embedded
-			arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-	
+			arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" >
 			<a-nft type="nft" url="/NFT/Nature" emitevents registerevents>
-				<a-entity rotation="0 0 0">
-					<a-plane src="Textures/grass texture.jpg" width=10 height=0.5 position="0 0 0" rotation="-80 0 0"></a-plane>
-					<a-sphere radius=0.1 position="0 0 0" src="Textures/perlin-512.png"></a-sphere>
-				</a-entity>
+				<a-sphere color="red" radius="50"></a-sphere>
 			</a-nft>
-			<a-entity camera position="0 0 2"></a-entity>
+			<a-entity camera></a-entity>
 		</a-scene>
 	</body>
 </html>
