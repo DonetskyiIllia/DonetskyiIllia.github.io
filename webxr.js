@@ -19,6 +19,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 	mesh.position.set(0, 0, -0.3);
 	scene.add(mesh);
 
+	const geometry = new THREE.SphereGeometry(2, 64, 32); 
+	const sphere = new THREE.Mesh( geometry, materialTexture );
+	sphere.position.set(0, 0, 0);
+
+	const geometryPlane = new THREE.PlaneGeometry( 40, 5 );
+	const materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+	const plane = new THREE.Mesh( geometryPlane, materialTexture1 );
+	plane.rotation.x = -45*Math.PI/180;
+	plane.position.set(0, -1, 0);
+	
+	let group = new THREE.Group();
+	group.add(plane);
+	group.add(sphere);
+	scene.add( group );
+	
+	group.position.set(0, 0, -0.5);
+
 	var lightOne=new THREE.AmbientLight(0xffffff, 0.5);
 	scene.add(lightOne);
 
