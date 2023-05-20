@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Сцена та NFT</title>
+		<script src="../aframe/aframe.min.js"></script>
+		<script src="../ARjs/aframe-ar-nft.js"></script>
+		<script src="model_nft.js"></script>
+	</head>
+
+	<style>
+		.arjs-loader {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+		z-index: 9999;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		}
+
+		.arjs-loader div {
+		text-align: center;
+		font-size: 1.25em;
+		color: white;
+		}
+	</style>
+
+	<body style="margin : 0px; overflow: hidden;">
+		<div class="arjs-loader">
+			<div>Завантаження, зачекайте...</div>
+		</div>
+		<a-scene vr-mode-ui="enabled: false;"
+			renderer="logarithmicDepthBuffer: true;"
+			embedded
+			arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" >
+			<a-nft type="nft" url="../assets/NFT/Land" emitevents registerevents>
+				<a-entity scale="50 50 50">
+					<a-sphere src="../assets/textures/2k_sun.jpg" radius=1></a-sphere>
+					<a-entity animation="property: rotation; to: 0 0 360; dur: 15000; easing: linear; loop: true" >
+						<a-torus color="black" radius="10" radius-tubular="0.01"></a-torus>
+						<a-sphere radius="1" position="10 0 0" src="../assets/textures/2k_uranus.jpg"></a-sphere>
+					</a-entity>
+				</a-entity>
+			</a-nft>
+			<a-entity camera></a-entity>
+		</a-scene>
+	</body>
+</html>
