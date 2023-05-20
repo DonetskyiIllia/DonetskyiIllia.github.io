@@ -19,8 +19,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 	mesh.position.set(0, 0, -0.3);
 	scene.add(mesh);
 
-	const geometry = new THREE.SphereGeometry(2, 64, 32); 
-	const sphere = new THREE.Mesh( geometry, materialTexture );
+	const texture = new THREE.TextureLoader().load("/Textures/perlin-512.png"); 
+	const materialTexture = new THREE.MeshBasicMaterial( { map:texture } );
+	
+	const texture1 = new THREE.TextureLoader().load("/Textures/grass texture.jpg"); 
+	const materialTexture1 = new THREE.MeshBasicMaterial( { map:texture1 } );
+
+	const geometrySphere = new THREE.SphereGeometry(2, 64, 32); 
+	const sphere = new THREE.Mesh( geometrySphere, materialTexture );
 	sphere.position.set(0, 0, 0);
 
 	const geometryPlane = new THREE.PlaneGeometry( 40, 5 );
@@ -33,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	group.add(plane);
 	group.add(sphere);
 	scene.add( group );
-	group.scale.set(0.01, 0.01, 0.01);
+	
 	group.position.set(0, 0, -0.5);
 
 	var lightOne=new THREE.AmbientLight(0xffffff, 0.5);
