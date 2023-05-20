@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	group.add(plane);
 	group.add(sphere);
 	scene.add( group );
-	
+	group.scale.set(0.01, 0.01, 0.01);
 	group.position.set(0, 0, -0.5);
 
 	var lightOne=new THREE.AmbientLight(0xffffff, 0.5);
