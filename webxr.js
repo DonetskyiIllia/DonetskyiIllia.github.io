@@ -44,6 +44,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	group.scale.set(0.05, 0.05, 0.05);
 	group.rotation.set(0, 0, -Math.PI/6);
 	
+	let x, y, t = 0, r = 1;
+
+	let timer=new THREE.Clock();
+	
 	function animate()
 	{
 		requestAnimationFrame(animate);
