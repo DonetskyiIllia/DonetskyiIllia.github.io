@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-import { ARButton } from 'three/addons/webxr/ARButton.js'; //2
+import { ARButton } from 'three/addons/webxr/ARButton.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
 	const plane = new THREE.Mesh( geometryPlane, materialTexture1 );
 	plane.rotation.x = -80*Math.PI/180;
-	plane.position.set(0, -1, 0);
+	plane.position.set(0, -1.5, 0);
 	
 	let group = new THREE.Group();
 	group.add(plane);
@@ -59,11 +59,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 		sphere.position.set(x, y, 0);
 		if(x>20)
 			t=0;	
-
-	//camera.position.x = -20+t;
-	//camera.position.y = 12-t/2;
-
-	//renderer.render( scene, camera );
 	}
 
 animate();
@@ -80,9 +75,9 @@ animate();
 		renderer.render(scene, camera);
 	});
 
-	const arButton = ARButton.createButton(renderer, {//3a
+	const arButton = ARButton.createButton(renderer, {
 		optionalFeatures: ["dom-overlay"],//3b
 		domOverlay: {root: document.body}//3c
-	});//3d
-	document.body.appendChild(arButton);//4
+	});
+	document.body.appendChild(arButton);
 });
