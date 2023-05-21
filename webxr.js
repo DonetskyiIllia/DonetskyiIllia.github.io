@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	const geometryPlane = new THREE.PlaneGeometry( 40, 5 );
 	const materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
 	const plane = new THREE.Mesh( geometryPlane, materialTexture1 );
-	//plane.rotation.x = -45*Math.PI/180;
+	plane.rotation.x = -80*Math.PI/180;
 	plane.position.set(0, -1, 0);
 	
 	let group = new THREE.Group();
