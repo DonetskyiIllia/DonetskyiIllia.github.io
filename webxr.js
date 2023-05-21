@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	
 	group.position.set(0, 0, -0.5);
 	group.scale.set(0.05, 0.05, 0.05);
-
+	group.rotation.set(0, 0, -Math.PI/6);
 
 	var lightOne=new THREE.AmbientLight(0xffffff, 0.5);
 	scene.add(lightOne);
