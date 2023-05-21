@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	scene.add( group );
 	
 	group.position.set(0, 0, -0.5);
-	group.scale.set(0.001, 0.001, 0.001);
+	group.scale.set(0.005, 0.005, 0.005);
 
 
 	var lightOne=new THREE.AmbientLight(0xffffff, 0.5);
